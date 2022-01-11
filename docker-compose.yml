@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  rabbitmq:
+    image: "rabbitmq:management"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      # - "./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf"
+      - "rabbitdata:/var/lib/rabbitmq/"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
+      - RABBITMQ_DEFAULT_VHOST=${RABBITMQ_VHOST}
+
+volumes:
+  rabbitdata:
+    name: rabbitdata
+
+networks:
+  default:
+    name: amqp

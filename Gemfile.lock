@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    amq-protocol (2.3.2)
+    amqp (1.8.0)
+      amq-protocol (>= 2.2.0)
+      eventmachine
+    eventmachine (1.2.7)
+
+PLATFORMS
+  aarch64-linux
+
+DEPENDENCIES
+  amqp (~> 1.8)
+
+BUNDLED WITH
+   2.3.4
