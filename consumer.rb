@@ -1,5 +1,7 @@
 require "amqp"
 
+STDOUT.sync = true
+
 class Counter
   def initialize()
     @count = 0
